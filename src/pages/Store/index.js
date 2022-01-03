@@ -1,13 +1,17 @@
 import React from 'react';
+import Header from '../../components/Header';
+import Navigation from '../../components/Navigation';
 import GlobalStyle from '../../styles/GlobalStyle';
-
-// import { Container } from './styles';
 
 function Store() {
   return (
     <div>
       <GlobalStyle />
-      Store
+      <Navigation
+        title="cinnecta"
+      />
+      <Header />
+      <section />
     </div>
   );
 }
