@@ -9,6 +9,7 @@ function Store() {
       <GlobalStyle />
       <Navigation
         title="cinnecta"
+        home
       />
       <Header />
       <section />

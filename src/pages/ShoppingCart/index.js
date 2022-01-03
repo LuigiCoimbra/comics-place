@@ -1,10 +1,16 @@
 import React from 'react';
-
+import GlobalStyle from '../../styles/GlobalStyle';
+import Navigation from '../../components/Navigation';
 // import { Container } from './styles';
 
 function ShoppingCart() {
   return (
-    <div>Shopping Cart</div>
+    <div>
+      <GlobalStyle />
+      <Navigation
+        title="cinnecta"
+      />
+    </div>
   );
 }
 
