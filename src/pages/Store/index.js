@@ -1,4 +1,5 @@
 import React from 'react';
+import CardItem from '../../components/CardItem';
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import GlobalStyle from '../../styles/GlobalStyle';
@@ -12,7 +13,7 @@ function Store() {
         home
       />
       <Header />
-      <section />
+      <CardItem />
     </div>
   );
 }
