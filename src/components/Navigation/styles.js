@@ -23,7 +23,7 @@ export const Container = styled.nav`
     border-left: 1.7px solid #393939;
   }
 
-  .shoppingCart {
+  .icon {
     color: #ffffe3;
     margin: 5px;
   }
