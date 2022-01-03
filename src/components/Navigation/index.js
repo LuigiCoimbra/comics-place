@@ -18,7 +18,7 @@ function Navigation({ title, home }) {
         ) : (
           <Link to="/">
             <FaHome
-              size={27}
+              size={25}
               className="icon"
             />
           </Link>
