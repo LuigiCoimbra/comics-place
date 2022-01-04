@@ -7,3 +7,9 @@ export const requestComics = async () => {
   const requiriment = await fetch(API_MARVEL).then((response) => response.json());
   return requiriment;
 };
+
+export const requestComicId = async (id) => {
+  const api = `http://gateway.marvel.com/v1/public/comics/${id}?ts=${timestamp}&apikey=${apikey}&hash=${hash}`;
+  const requiriment = await fetch(api).then((response) => response.json());
+  return requiriment;
+};
