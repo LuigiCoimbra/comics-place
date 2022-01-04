@@ -1,5 +1,6 @@
 import React from 'react';
 import CardItem from '../../components/CardItem';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import GlobalStyle from '../../styles/GlobalStyle';
@@ -14,6 +15,7 @@ function Store() {
       />
       <Header />
       <CardItem />
+      <Footer />
     </div>
   );
 }

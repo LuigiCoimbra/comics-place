@@ -19,7 +19,7 @@ export const Card = styled.section`
   border-radius: 6px;
   width: 386.656px;
   box-shadow: 0 0 1.5em gray;
-  margin: 5px;
+  margin: 10px;
 
   p {
     font-size: 14px;
