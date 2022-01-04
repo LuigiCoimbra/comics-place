@@ -18,13 +18,29 @@ export const Card = styled.section`
   justify-content: center;
   border-radius: 6px;
   width: 386.656px;
-  box-shadow: 0 0 1.5em gray;
   margin: 10px;
+  margin-bottom: 45px;
+
+  .photo-item {
+    width: 386.656px;
+    height: 386.656px;
+    box-shadow: 0 0 1em gray;
+  }
+
+  .link-item {
+    text-decoration: none;
+  }
 
   p {
+    color: black;
     font-size: 14px;
     font-weight: 600;
     line-height: 16.8px;
-    margin: 10px;
+    margin-left: 5px;
+    margin-top: 25px;
+  }
+
+  p:hover {
+    color: #E62429;
   }
 `;

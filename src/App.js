@@ -12,6 +12,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Store />} />
             <Route path="/shopping-cart" element={<ShoppingCart />} />
+            <Route path="/detalhes/:id" />
           </Routes>
         </Provider>
       </BrowserRouter>
