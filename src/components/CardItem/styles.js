@@ -31,7 +31,7 @@ export const Card = styled.section`
     text-decoration: none;
   }
 
-  p {
+  .title {
     color: black;
     font-size: 14px;
     font-weight: 600;
@@ -40,7 +40,16 @@ export const Card = styled.section`
     margin-top: 25px;
   }
 
-  p:hover {
+  .title:hover {
     color: #E62429;
+  }
+
+  .price {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-top: 5px;
+    opacity: 0.8;
   }
 `;

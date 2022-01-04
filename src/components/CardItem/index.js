@@ -14,7 +14,7 @@ function CardItem() {
         comics.title !== 'Marvel Previews (2017)' ? (
           <Card>
             <Link
-              to={{ pathname: `/detalhes/${comics.id}`, state: data }}
+              to={{ pathname: `/detalhes/${comics.id}` }}
               className="link-item"
             >
               <LazyLoadImage
@@ -24,7 +24,10 @@ function CardItem() {
                 scrollPosition={scrollPosition}
                 className="photo-item"
               />
-              <p>{comics.title}</p>
+              <p className="title">{comics.title}</p>
+              {comics.prices.map(({ price }) => (
+                <p className="price">{`R$ ${price}`}</p>
+              ))}
             </Link>
           </Card>
         ) : (
