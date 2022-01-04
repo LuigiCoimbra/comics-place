@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import { requestComicId } from '../../services';
 import GlobalStyle from '../../styles/GlobalStyle';
 import { Container } from './styles';
 import Footer from '../../components/Footer';
+import Context from '../../context/Context';
 
 function Details() {
   const [comicId, setComicId] = useState([]);
   const { idComic } = useParams();
+  const { addToCart } = useContext(Context);
+
   useEffect(() => {
     const requestApi = async () => {
       const item = await requestComicId(idComic);
@@ -44,7 +47,11 @@ function Details() {
               ))}
             </div>
             <div className="container-div">
-              <button type="button" className="add-cart">
+              <button
+                type="button"
+                className="add-cart"
+                onClick={() => addToCart(comicId)}
+              >
                 Adicionar ao carrinho
               </button>
             </div>

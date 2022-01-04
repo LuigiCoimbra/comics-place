@@ -4,6 +4,21 @@ import Context from './Context';
 
 function Provider({ children }) {
   const [data, setData] = useState([]);
+  const [itemsCart, setItemsCart] = useState({
+    products: [],
+  });
+
+  const addToCart = (items) => {
+    setItemsCart({
+      ...itemsCart,
+      products: [
+        ...itemsCart.products,
+        {
+          items,
+        },
+      ],
+    });
+  };
 
   useEffect(() => {
     const getApi = async () => {
@@ -16,6 +31,7 @@ function Provider({ children }) {
 
   const context = {
     data,
+    addToCart,
   };
 
   return (
