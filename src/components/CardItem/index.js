@@ -14,6 +14,7 @@ function CardItem() {
         comics.title !== 'Marvel Previews (2017)' ? (
           <Card>
             <Link
+              key={comics.id}
               to={{ pathname: `/detalhes/${comics.id}` }}
               className="link-item"
             >
