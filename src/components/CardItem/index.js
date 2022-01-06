@@ -6,8 +6,7 @@ import Context from '../../context/Context';
 import { Container, Card } from './styles';
 
 function CardItem() {
-  const { data } = useContext(Context);
-
+  const { data, addToCart } = useContext(Context);
   return (
     <Container>
       { data.map((comics, { scrollPosition }) => (
@@ -31,6 +30,15 @@ function CardItem() {
                   <p className="price">{ price === 0 ? 'GRÁTIS' : `R$ ${price}` }</p>
                 ))}
               </Link>
+              <button
+                type="button"
+                className="cart-button"
+                onClick={() => {
+                  addToCart(comics.id, comics.title, comics.prices, comics.thumbnail);
+                }}
+              >
+                Adicionar ao Carrinho
+              </button>
             </div>
           </Card>
         ) : (

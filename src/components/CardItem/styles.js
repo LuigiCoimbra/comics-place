@@ -19,7 +19,7 @@ export const Card = styled.section`
     flex-direction: column;
     font-size: 0.8em;
     justify-content: space-between;
-    margin: 10px;
+    margin: 20px;
     position: relative;
     text-align: center;
     width: 30em;
@@ -63,5 +63,26 @@ export const Card = styled.section`
     font-size: 14px;
     font-weight: 500;
     opacity: 0.8;
+  }
+
+  .cart-button {
+    background: #e2e2e2;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    color: #2b2b2b;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    height: 3.5em;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .cart-button:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .cart-button:active {
+    filter: brightness(0.95);
   }
 `;
