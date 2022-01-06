@@ -24,7 +24,7 @@ function Provider({ children }) {
     });
 
     const getComicPrice = price.map((item) => item.price);
-    setTotalPrice(Number(totalPrice) + Number(getComicPrice));
+    setTotalPrice((Number(totalPrice) + Number(getComicPrice)));
   };
 
   useEffect(() => {
