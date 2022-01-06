@@ -3,14 +3,14 @@ import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
 import Context from '../../context/Context';
 import HomeIcon from '../../components/HomeIcon';
-// import { Container } from './styles';
+import { Container } from './styles';
 
 function Cart() {
   const { itemsCart: { products } } = useContext(Context);
 
   const renderProduct = () => {
     if (products.length <= 0) {
-      return <div>Carrinho Vazio</div>;
+      return <h1 className="empyt-cart">Carrinho Vazio ;-;</h1>;
     }
     return (products.map(({ title, thumbnail, price }, index) => (
       <div key={index}>
@@ -29,12 +29,12 @@ function Cart() {
   };
 
   return (
-    <div>
+    <Container>
       <GlobalStyle />
       <Navigation />
       <HomeIcon />
       { renderProduct() }
-    </div>
+    </Container>
   );
 }
 

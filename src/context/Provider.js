@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { requestComics } from '../services';
 import Context from './Context';
+// import { getItemsFromLocalStorage } from '../utils/localStorageHelpers';
 
 function Provider({ children }) {
   const [data, setData] = useState([]);
-  const [itemsCart, setItemsCart] = useState({
-    products: [],
-  });
-  const [totalPrice, setTotalPrice] = useState(0);
+  // const [itemsCart, setItemsCart] = useState({
+  //   products: [],
+  // });
+  // const [totalPrice, setTotalPrice] = useState(0);
 
-  const addToCart = (id, title, price, thumbnail) => {
-    setItemsCart({
-      ...itemsCart,
-      products: [
-        ...itemsCart.products,
-        {
-          id,
-          title,
-          price,
-          thumbnail,
-        },
-      ],
-    });
+  // const addToCart = (id, title, price, thumbnail) => {
+  //   setItemsCart({
+  //     ...itemsCart,
+  //     products: [
+  //       ...itemsCart.products,
+  //       {
+  //         id,
+  //         title,
+  //         price,
+  //         thumbnail,
+  //       },
+  //     ],
+  //   });
 
-    const getComicPrice = price.map((item) => item.price);
-    setTotalPrice((Number(totalPrice) + Number(getComicPrice)));
-  };
+  //   const getComicPrice = price.map((item) => item.price);
+  //   setTotalPrice((Number(totalPrice) + Number(getComicPrice)));
+  // };
 
   useEffect(() => {
     const getApi = async () => {
@@ -38,8 +39,8 @@ function Provider({ children }) {
 
   const context = {
     data,
-    addToCart,
-    itemsCart,
+    // addToCart,
+    // itemsCart,
   };
 
   return (
