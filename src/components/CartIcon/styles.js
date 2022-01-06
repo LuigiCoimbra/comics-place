@@ -16,4 +16,34 @@ export const Container = styled.div`
     width: 1.5em;
     z-index: 2;
   }
+
+  .cart-link svg {
+    animation: cart-animation 0.2s ease-in-out;
+  }
+
+.cart-link span {
+    background: #888;
+    border-radius: 50%;
+    bottom: 0;
+    color: white;
+    display: grid;
+    font-size: 0.4em;
+    height: 1.7em;
+    left: 100%;
+    place-items: center;
+    position: absolute;
+    text-decoration: none;
+    transform: translateX(-50%);
+    width: 1.7em;
+  }
+
+@keyframes cart-animation {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
 `;

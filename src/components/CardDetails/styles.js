@@ -64,6 +64,7 @@ export const Container = styled.div`
     button {
       font-size: 15px;
       height: 30px;
+      font-weight: 700;
     }
 
     button:hover {

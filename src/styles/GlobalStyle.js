@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    background: #ffffe3;
+    background: #ffff;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }

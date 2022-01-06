@@ -37,7 +37,7 @@ function CardItem() {
                   addToCart(comics.id, comics.title, comics.prices, comics.thumbnail);
                 }}
               >
-                Adicionar ao Carrinho
+                ADICIONAR AO CARRINHO
               </button>
             </div>
           </Card>
