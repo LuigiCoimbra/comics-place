@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import { requestComicId } from '../../services';
 import GlobalStyle from '../../styles/GlobalStyle';
-import { Container } from './styles';
 import HomeIcon from '../../components/HomeIcon';
 import CartIcon from '../../components/CartIcon';
 import Footer from '../../components/Footer';
-import Context from '../../context/Context';
+import CardDetails from '../../components/CardDetails';
 
 function Details() {
   const [comicId, setComicId] = useState([]);
   const { idComic } = useParams();
-  const { addToCart } = useContext(Context);
 
   useEffect(() => {
     const requestApi = async () => {
@@ -30,34 +28,7 @@ function Details() {
       <HomeIcon />
       <CartIcon />
       { comicId.map((comic) => (
-        <Container>
-          <section className="title-image">
-            <h1>{comic.title}</h1>
-            <img
-              src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-              alt={comic.title}
-            />
-          </section>
-          <section className="price-title">
-            {comic.prices.map(({ price }) => (
-              <h1 className="price">{`R$ ${price}`}</h1>
-            ))}
-            <div>
-              {comic.textObjects.map((value) => (
-                <p>{value.text}</p>
-              ))}
-            </div>
-            <div className="container-div">
-              <button
-                type="button"
-                className="add-cart"
-                onClick={() => addToCart(comic.id, comic.title, comic.prices, comic.thumbnail)}
-              >
-                Adicionar ao carrinho
-              </button>
-            </div>
-          </section>
-        </Container>
+        <CardDetails comic={comic} />
       )) }
       <Footer />
     </div>
