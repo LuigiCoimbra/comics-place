@@ -50,7 +50,7 @@ function Details() {
               <button
                 type="button"
                 className="add-cart"
-                onClick={() => addToCart(comicId)}
+                onClick={() => addToCart(comic.id, comic.title, comic.prices, comic.thumbnail)}
               >
                 Adicionar ao carrinho
               </button>
