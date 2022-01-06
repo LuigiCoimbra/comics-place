@@ -66,7 +66,7 @@ function CardItem({ product }) {
                   className="price"
                   key={index}
                 >
-                  { price === 0 ? 'GRÁTIS' : `R$ ${price}` }
+                  { price === 0 ? 'GRÁTIS' : `R$ ${Math.round(price).toFixed(2)}` }
                 </p>
               ))}
             </Link>

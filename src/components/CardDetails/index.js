@@ -18,7 +18,7 @@ function CardDetails({ comic }) {
           />
           <div className="product-attributes">
             { prices.map(({ price }, index) => (
-              <h1 key={index} className="product-price">{ `R$ ${price}`}</h1>
+              <h1 key={index} className="product-price">{ `R$ ${Math.round(price).toFixed(2)}`}</h1>
             ))}
             <h2>Descrição do Quadrinho</h2>
             {textObjects.map(({ text }, index) => (

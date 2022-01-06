@@ -1,39 +1,79 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
-import Context from '../../context/Context';
+import { getItemsFromLocalStorage, saveItemToLocalStorage } from '../../utils/localStorageHelpers';
 import HomeIcon from '../../components/HomeIcon';
 import { Container } from './styles';
+import CartItem from '../../components/CartItem';
 
 function Cart() {
-  const { itemsCart: { products } } = useContext(Context);
+  const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const items = getItemsFromLocalStorage('cartItems');
 
-  const renderProduct = () => {
-    if (products.length <= 0) {
-      return <h1 className="empyt-cart">Carrinho Vazio ;-;</h1>;
-    }
-    return (products.map(({ title, thumbnail, price }, index) => (
-      <div key={index}>
-        <h1>{title}</h1>
-        {price.map((item) => (
-          <span>{item.price}</span>
-        ))}
-        <img
-          src={`${thumbnail.path}.${thumbnail.extension}`}
-          alt={title}
-          width="386.656px"
-          height="386.656px"
-        />
-      </div>
-    )));
+  const getTotalPrice = (item) => {
+    const sumPrice = item.reduce(
+      (acc, curr) => acc + curr.prices.map(({ price }) => price) * curr.amount,
+      0,
+    );
+    const fixedTotalPrice = Number(sumPrice.toFixed(2));
+    setTotalPrice(Math.round(fixedTotalPrice).toFixed(2));
+    saveItemToLocalStorage('total', fixedTotalPrice);
   };
+
+  const removeItemFromCart = (id) => {
+    const newItems = cartItems.filter((item) => item.id !== id);
+
+    setCartItems([...newItems]);
+
+    getTotalPrice(newItems);
+    saveItemToLocalStorage('cartItems', newItems);
+  };
+
+  const updateItemAmount = (quantity, itemId) => {
+    const newItems = cartItems.map((item) => {
+      if (item.id === itemId) return { ...item, amount: quantity };
+      return item;
+    });
+
+    setCartItems([...newItems]);
+    getTotalPrice(newItems);
+    saveItemToLocalStorage('cartItems', newItems);
+  };
+
+  const fetchProducts = () => {
+    setCartItems(items);
+    getTotalPrice(items);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <Container>
       <GlobalStyle />
       <Navigation />
       <HomeIcon />
-      { renderProduct() }
+      { cartItems.length !== 0 ? (
+        cartItems.map((element) => (
+          <CartItem
+            key={element.id}
+            id={element.id}
+            title={element.title}
+            price={element.prices}
+            thumbnail={element.thumbnail}
+            amount={element.amount}
+            removeItemFromCart={removeItemFromCart}
+            updateItemAmount={updateItemAmount}
+          />
+        ))
+      ) : (
+        <h1>
+          Seu carrinho está vazio ;-;
+        </h1>
+      )}
+      <p>{totalPrice}</p>
     </Container>
   );
 }
