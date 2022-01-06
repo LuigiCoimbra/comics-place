@@ -1,20 +1,21 @@
-## Cinnecta
+## Cinnecta - Loja de Quadrinhos
 
 ## Desenvolvimento
  - Desenvolvido por <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank">Marcus Rodrigues</a>.
  - Email:
    - marcus.rodrigues10@hotmail.com
  - Tecnologia e Ferramentas:
-   - ReactJS;
-   - Styled-components;
+   - ReactJS
    - React Router Dom
+   - React Hooks
+   - Styled-components
    
 
 ## Visualizar
  - No seu terminal, clone o respositório:
-   - ``` git clone git@github.com:marcusrodriguesdev/cinnecta.git ```
+   - ``` git clone git@github.com:marcusrodriguesdev/comic-store.git ```
  - Entre no diretório do projeto
-   - ``` cd cinnecta```
+   - ``` cd comic-store```
  - Na pasta raíz, instale as dependências:
    - ``` npm install ```
  - E inicialize
