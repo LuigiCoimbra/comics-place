@@ -13,23 +13,25 @@ function CardItem() {
       { data.map((comics, { scrollPosition }) => (
         comics.title !== 'Marvel Previews (2017)' ? (
           <Card>
-            <Link
-              key={comics.id}
-              to={{ pathname: `/detalhes/${comics.id}` }}
-              className="link-item"
-            >
-              <LazyLoadImage
-                effect="blur"
-                src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
-                alt={comics.title}
-                scrollPosition={scrollPosition}
-                className="photo-item"
-              />
-              <p className="title">{comics.title}</p>
-              {comics.prices.map(({ price }) => (
-                <p className="price">{`R$ ${price}`}</p>
-              ))}
-            </Link>
+            <div className="product-card">
+              <Link
+                key={comics.id}
+                to={{ pathname: `/detalhes/${comics.id}` }}
+                className="link-item"
+              >
+                <LazyLoadImage
+                  effect="blur"
+                  src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
+                  alt={comics.title}
+                  scrollPosition={scrollPosition}
+                  className="photo-item"
+                />
+                <p className="title">{comics.title}</p>
+                {comics.prices.map(({ price }) => (
+                  <p className="price">{ price === 0 ? 'GRÁTIS' : `R$ ${price}` }</p>
+                ))}
+              </Link>
+            </div>
           </Card>
         ) : (
           <div />
