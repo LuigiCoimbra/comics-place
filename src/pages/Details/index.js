@@ -4,6 +4,8 @@ import Navigation from '../../components/Navigation';
 import { requestComicId } from '../../services';
 import GlobalStyle from '../../styles/GlobalStyle';
 import { Container } from './styles';
+import HomeIcon from '../../components/HomeIcon';
+import CartIcon from '../../components/CartIcon';
 import Footer from '../../components/Footer';
 import Context from '../../context/Context';
 
@@ -24,9 +26,9 @@ function Details() {
   return (
     <div>
       <GlobalStyle />
-      <Navigation
-        home={false}
-      />
+      <Navigation />
+      <HomeIcon />
+      <CartIcon />
       { comicId.map((comic) => (
         <Container>
           <section className="title-image">

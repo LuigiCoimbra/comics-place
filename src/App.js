@@ -12,7 +12,7 @@ function App() {
         <Provider>
           <Routes>
             <Route path="/" element={<Store />} />
-            <Route path="/shopping-cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/detalhes/:idComic" element={<Details />} />
           </Routes>
         </Provider>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
 import Context from '../../context/Context';
+import HomeIcon from '../../components/HomeIcon';
 // import { Container } from './styles';
 
 function Cart() {
@@ -31,6 +32,7 @@ function Cart() {
     <div>
       <GlobalStyle />
       <Navigation />
+      <HomeIcon />
       { renderProduct() }
     </div>
   );
