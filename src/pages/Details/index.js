@@ -25,8 +25,7 @@ function Details() {
     <div>
       <GlobalStyle />
       <Navigation
-        title="cinnecta"
-        home
+        home={false}
       />
       { comicId.map((comic) => (
         <Container>
