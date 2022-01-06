@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.nav`
   align-items: center;
-  background: #202020;
+  background: #E2E2E2;
   display: flex;
   justify-content: space-between;
   height: 75px;
-  border-bottom: 1.7px solid #393939;
+  border-bottom: 1.7px solid #CBCBCB;
 
   a {
     font-family: 'Josefin Sans', sans-serif;
@@ -14,17 +14,28 @@ export const Container = styled.nav`
     font-size: 36px;
     margin-left: 15px;
     text-decoration: none;
-    color: #fff;
+    color: #2B2B2B;
   }
 
   div {
     border: none;
     margin: 15px;
-    border-left: 1.7px solid #393939;
+    border-left: 1.7px solid #CBCBCB;
   }
 
-  .icon {
-    color: #ffffe3;
-    margin: 5px;
+  .link {
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #2b2b2b;
+    display: grid;
+    font-size: 2em;
+    height: 1.5em;
+    place-items: center;
+    position: fixed;
+    right: 0.8em;
+    top: 0.5em;
+    width: 1.5em;
+    z-index: 2;
   }
 `;
