@@ -1,42 +1,30 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import CardItem from '../../components/CardItem';
 import Footer from '../../components/Footer';
 import CartIcon from '../../components/CartIcon';
 import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
 import Context from '../../context/Context';
-import { getItemsFromLocalStorage } from '../../utils/localStorageHelpers';
+import { Container } from './styles';
 
 function Store() {
   const { data } = useContext(Context);
-  const [itemCount, setItemCount] = useState(0);
-
-  const updateItemCount = () => {
-    const items = getItemsFromLocalStorage('cartItems');
-
-    const test = items.reduce((acc, { amount }) => acc + amount, 0);
-
-    setItemCount(test);
-  };
-
-  useEffect(() => {
-    updateItemCount();
-  }, []);
 
   return (
-    <div>
+    <Container>
       <GlobalStyle />
       <Navigation />
-      <CartIcon itemCount={itemCount} />
-      { data.map((product) => (
-        <CardItem
-          key={product.id}
-          product={product}
-          updateItemCount={updateItemCount}
-        />
-      )) }
+      <CartIcon />
+      <div className="card-comic">
+        { data.map((product) => (
+          <CardItem
+            key={product.id}
+            product={product}
+          />
+        )) }
+      </div>
       <Footer />
-    </div>
+    </Container>
   );
 }
 

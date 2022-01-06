@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,10 @@ import { Container, Card } from './styles';
 import {
   getItemsFromLocalStorage, saveItemToLocalStorage,
 } from '../../utils/localStorageHelpers';
+import Context from '../../context/Context';
 
-function CardItem({ product, updateItemCount }) {
+function CardItem({ product }) {
+  const { updateItemCount } = useContext(Context);
   const [isAtCart, setIsAtCart] = useState();
 
   const checkCart = () => {

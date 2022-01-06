@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
-  align-items: center;
+export const Container = styled.div`
+  /* align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  width: 40%;
+  height: 10%; */
 `;
 
 export const Card = styled.section`
