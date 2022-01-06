@@ -22,11 +22,10 @@ function Provider({ children }) {
         },
       ],
     });
-    const value = price.map((item) => item.price);
-    setTotalPrice(Number(totalPrice) + Number(value));
-  };
 
-  console.log(totalPrice);
+    const getComicPrice = price.map((item) => item.price);
+    setTotalPrice(Number(totalPrice) + Number(getComicPrice));
+  };
 
   useEffect(() => {
     const getApi = async () => {
