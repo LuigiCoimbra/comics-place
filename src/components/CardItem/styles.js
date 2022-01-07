@@ -85,4 +85,16 @@ export const Card = styled.section`
   .cart-button:active {
     filter: brightness(0.95);
   }
+
+  .at-cart {
+    color: #40916c;
+    pointer-events: none;
+    position: absolute;
+    right: 1.5em;
+    bottom: 5em;
+  }
+
+  .at-cart-icon {
+    font-size: 1.5em;
+  }
 `;

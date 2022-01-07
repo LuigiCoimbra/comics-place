@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
 import { getItemsFromLocalStorage, saveItemToLocalStorage } from '../../utils/localStorageHelpers';
@@ -55,25 +56,36 @@ function Cart() {
       <GlobalStyle />
       <Navigation />
       <HomeIcon />
-      { cartItems.length !== 0 ? (
-        cartItems.map((element) => (
-          <CartItem
-            key={element.id}
-            id={element.id}
-            title={element.title}
-            price={element.prices}
-            thumbnail={element.thumbnail}
-            amount={element.amount}
-            removeItemFromCart={removeItemFromCart}
-            updateItemAmount={updateItemAmount}
-          />
-        ))
-      ) : (
-        <h1>
-          Seu carrinho está vazio ;-;
-        </h1>
-      )}
-      <p>{totalPrice}</p>
+      <div className="cart-items">
+        { cartItems.length !== 0 ? (
+          cartItems.map((element) => (
+            <CartItem
+              key={element.id}
+              id={element.id}
+              title={element.title}
+              prices={element.prices}
+              thumbnail={element.thumbnail}
+              amount={element.amount}
+              removeItemFromCart={removeItemFromCart}
+              updateItemAmount={updateItemAmount}
+            />
+          ))
+        ) : (
+          <h1 className="empyt-cart">
+            Seu carrinho está vazio ;-;
+          </h1>
+        )}
+      </div>
+      <h2 className="total-price">{`R$ ${totalPrice}`}</h2>
+      <div className="button">
+        <Link
+          className="purchase"
+          to="/purchase"
+          data-testid="checkout-products"
+        >
+          FINALIZAR COMPRA
+        </Link>
+      </div>
     </Container>
   );
 }

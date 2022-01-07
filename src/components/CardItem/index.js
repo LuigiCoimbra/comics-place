@@ -2,7 +2,9 @@ import React, { useEffect, useState, useContext } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from 'react-router-dom';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Container, Card } from './styles';
+
 import {
   getItemsFromLocalStorage, saveItemToLocalStorage,
 } from '../../utils/localStorageHelpers';
@@ -79,6 +81,11 @@ function CardItem({ product }) {
             >
               ADICIONAR AO CARRINHO
             </button>
+            {isAtCart && (
+            <div className="at-cart">
+              <AiOutlineShoppingCart className="at-cart-icon" />
+            </div>
+            )}
           </div>
         </Card>
       ) : (
