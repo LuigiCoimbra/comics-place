@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
   text-align: center;
 
   .empyt-cart {
@@ -37,6 +40,7 @@ export const Container = styled.div`
     display: flex;
     font-size: 0.8em;
     font-weight: 700;
+    margin-bottom: 100px;
     padding: 1em 2em;
     text-decoration: none;
     width: max-content;

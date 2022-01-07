@@ -87,7 +87,7 @@ export const Card = styled.section`
   }
 
   .at-cart {
-    color: #40916c;
+    color: #3DDD25;
     pointer-events: none;
     position: absolute;
     right: 1.5em;
@@ -95,6 +95,6 @@ export const Card = styled.section`
   }
 
   .at-cart-icon {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 `;

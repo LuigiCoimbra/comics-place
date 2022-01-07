@@ -12,7 +12,7 @@ import Context from '../../context/Context';
 
 function CardItem({ product }) {
   const { updateItemCount } = useContext(Context);
-  const [isAtCart, setIsAtCart] = useState();
+  const [isAtCart, setIsAtCart] = useState(false);
 
   const checkCart = () => {
     const items = getItemsFromLocalStorage('cartItems');
@@ -24,7 +24,7 @@ function CardItem({ product }) {
     checkCart();
   }, []);
 
-  const handleClick = () => {
+  const addToCart = () => {
     const items = getItemsFromLocalStorage('cartItems');
 
     if (!isAtCart) {
@@ -76,7 +76,7 @@ function CardItem({ product }) {
               type="button"
               className="cart-button"
               onClick={() => {
-                handleClick();
+                addToCart();
               }}
             >
               ADICIONAR AO CARRINHO

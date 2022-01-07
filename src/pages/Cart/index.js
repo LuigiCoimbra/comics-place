@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import GlobalStyle from '../../styles/GlobalStyle';
 import Navigation from '../../components/Navigation';
@@ -6,8 +6,11 @@ import { getItemsFromLocalStorage, saveItemToLocalStorage } from '../../utils/lo
 import HomeIcon from '../../components/HomeIcon';
 import { Container } from './styles';
 import CartItem from '../../components/CartItem';
+import Context from '../../context/Context';
+import Footer from '../../components/Footer';
 
 function Cart() {
+  const { setItemCount } = useContext(Context);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const items = getItemsFromLocalStorage('cartItems');
@@ -72,7 +75,7 @@ function Cart() {
           ))
         ) : (
           <h1 className="empyt-cart">
-            Seu carrinho está vazio ;-;
+            Seu carrinho está vazio 🥺
           </h1>
         )}
       </div>
@@ -80,12 +83,17 @@ function Cart() {
       <div className="button">
         <Link
           className="purchase"
-          to="/purchase"
+          to="/"
           data-testid="checkout-products"
+          onClick={() => {
+            localStorage.clear();
+            setItemCount(0);
+          }}
         >
           FINALIZAR COMPRA
         </Link>
       </div>
+      <Footer />
     </Container>
   );
 }

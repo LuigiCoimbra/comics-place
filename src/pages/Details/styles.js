@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-  margin: 50px;
+  min-height: 100%;
+  position: absolute;
   display: flex;
   height: 80vh;
 
@@ -30,6 +31,7 @@ export const Container = styled.main`
 
     div {
       margin-top: 60px;
+      margin-bottom: 30px;
 
       p {
         font-size: 18px;

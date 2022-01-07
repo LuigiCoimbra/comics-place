@@ -10,7 +10,7 @@ function CartIcon() {
     <Container>
       <Link
         className="cart-link"
-        to="/cart"
+        to="/carrinho"
       >
         <AiOutlineShoppingCart />
         <span>{itemCount}</span>
