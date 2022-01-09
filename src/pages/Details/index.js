@@ -5,7 +5,6 @@ import { requestComicId } from '../../services';
 import GlobalStyle from '../../styles/GlobalStyle';
 import HomeIcon from '../../components/HomeIcon';
 import CartIcon from '../../components/CartIcon';
-import Footer from '../../components/Footer';
 import CardDetails from '../../components/CardDetails';
 
 function Details() {
@@ -30,7 +29,6 @@ function Details() {
       { comicId.map((comic) => (
         <CardDetails comic={comic} />
       )) }
-      <Footer />
     </div>
   );
 }

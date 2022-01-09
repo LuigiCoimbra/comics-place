@@ -15,14 +15,14 @@ function Store() {
       <GlobalStyle />
       <Navigation />
       <CartIcon />
-      <div className="card-comic">
+      <main className="card-comic">
         { data.map((product) => (
           <CardItem
             key={product.id}
             product={product}
           />
         )) }
-      </div>
+      </main>
       <Footer />
     </Container>
   );

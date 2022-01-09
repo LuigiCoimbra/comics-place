@@ -63,8 +63,8 @@ export const Container = styled.div`
 
     button {
       font-size: 15px;
-      height: 30px;
       font-weight: 700;
+      height: 30px;
     }
 
     button:hover {
@@ -82,5 +82,46 @@ export const Container = styled.div`
 
   .product-attributes p {
     font-weight: 700;
+  }
+
+  @media screen and (max-width: 414px) {
+    .product-detail-name {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .product-main-info {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product-main-info img {
+      width: 80%;
+    }
+
+    .product-attributes {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 15px;
+      padding: 0;
+      width: 80%;
+
+      .product-price {
+        margin-top: 15px;
+      }
+
+      h2 {
+        margin-top: 20px;
+      }
+
+      .add-cart {
+        margin-top: 20px;
+        width: 200px;
+      }
+    }
   }
 `;
