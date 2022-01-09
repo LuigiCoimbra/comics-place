@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { requestComics } from '../services';
 import Context from './Context';
-import { getItemsFromLocalStorage } from '../utils/localStorageHelpers';
+import { getItemsFromLocalStorage, saveItemToLocalStorage } from '../utils/localStorageHelpers';
 
 function Provider({ children }) {
   const [data, setData] = useState([]);
@@ -13,6 +13,28 @@ function Provider({ children }) {
     const test = items.reduce((acc, { amount }) => acc + amount, 0);
 
     setItemCount(test);
+  };
+
+  const addToCart = (product, setIsAtCart, isAtCart) => {
+    const items = getItemsFromLocalStorage('cartItems');
+
+    if (!isAtCart) {
+      const newItems = [...items, { ...product, amount: 1 }];
+
+      setIsAtCart(true);
+      saveItemToLocalStorage('cartItems', newItems);
+      updateItemCount();
+    } else {
+      const newItems = items.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, amount: item.amount + 1 };
+        }
+        return item;
+      });
+
+      saveItemToLocalStorage('cartItems', newItems);
+      updateItemCount();
+    }
   };
 
   useEffect(() => {
@@ -32,6 +54,7 @@ function Provider({ children }) {
     data,
     itemCount,
     updateItemCount,
+    addToCart,
   };
 
   return (

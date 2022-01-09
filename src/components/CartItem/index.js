@@ -63,7 +63,9 @@ function CartItem({
           </button>
         </div>
         { prices.map((product) => (
-          <p className="item-price">{`R$ ${Math.round(product.price).toFixed(2)}`}</p>
+          <p className="item-price">
+            {`R$ ${Math.round(product.price).toFixed(2)}`}
+          </p>
         )) }
       </div>
     </Container>

@@ -1,38 +1,13 @@
 import React, { useContext, useState } from 'react';
 import Context from '../../context/Context';
 import { Container } from './styles';
-import {
-  getItemsFromLocalStorage, saveItemToLocalStorage,
-} from '../../utils/localStorageHelpers';
 
 function CardDetails({ comic }) {
-  const { updateItemCount } = useContext(Context);
+  const { addToCart } = useContext(Context);
   const [isAtCart, setIsAtCart] = useState(false);
   const {
     title, thumbnail, prices, textObjects,
   } = comic;
-
-  const addToCart = () => {
-    const items = getItemsFromLocalStorage('cartItems');
-
-    if (!isAtCart) {
-      const newItems = [...items, { ...comic, amount: 1 }];
-
-      setIsAtCart(true);
-      saveItemToLocalStorage('cartItems', newItems);
-      updateItemCount();
-    } else {
-      const newItems = items.map((item) => {
-        if (item.id === comic.id) {
-          return { ...item, amount: item.amount + 1 };
-        }
-        return item;
-      });
-
-      saveItemToLocalStorage('cartItems', newItems);
-      updateItemCount();
-    }
-  };
 
   return (
     <Container>
@@ -61,7 +36,7 @@ function CardDetails({ comic }) {
             <button
               type="button"
               className="add-cart"
-              onClick={() => addToCart()}
+              onClick={() => addToCart(comic, setIsAtCart, isAtCart)}
             >
               Adicionar ao carrinho
             </button>

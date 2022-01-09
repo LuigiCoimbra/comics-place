@@ -6,12 +6,12 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Container, Card } from './styles';
 
 import {
-  getItemsFromLocalStorage, saveItemToLocalStorage,
+  getItemsFromLocalStorage,
 } from '../../utils/localStorageHelpers';
 import Context from '../../context/Context';
 
 function CardItem({ product }) {
-  const { updateItemCount } = useContext(Context);
+  const { addToCart } = useContext(Context);
   const [isAtCart, setIsAtCart] = useState(false);
 
   const checkCart = () => {
@@ -23,28 +23,6 @@ function CardItem({ product }) {
   useEffect(() => {
     checkCart();
   }, []);
-
-  const addToCart = () => {
-    const items = getItemsFromLocalStorage('cartItems');
-
-    if (!isAtCart) {
-      const newItems = [...items, { ...product, amount: 1 }];
-
-      setIsAtCart(true);
-      saveItemToLocalStorage('cartItems', newItems);
-      updateItemCount();
-    } else {
-      const newItems = items.map((item) => {
-        if (item.id === product.id) {
-          return { ...item, amount: item.amount + 1 };
-        }
-        return item;
-      });
-
-      saveItemToLocalStorage('cartItems', newItems);
-      updateItemCount();
-    }
-  };
 
   return (
     <Container>
@@ -76,7 +54,7 @@ function CardItem({ product }) {
               type="button"
               className="cart-button"
               onClick={() => {
-                addToCart();
+                addToCart(product, setIsAtCart, isAtCart);
               }}
             >
               ADICIONAR AO CARRINHO
