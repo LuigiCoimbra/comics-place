@@ -10,7 +10,7 @@ import {
 } from '../../utils/localStorageHelpers';
 import Context from '../../context/Context';
 
-function CardItem({ product }) {
+function CardProduct({ product }) {
   const { addToCart } = useContext(Context);
   const [isAtCart, setIsAtCart] = useState(false);
 
@@ -73,4 +73,4 @@ function CardItem({ product }) {
   );
 }
 
-export default CardItem;
+export default CardProduct;

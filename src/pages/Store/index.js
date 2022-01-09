@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import CardItem from '../../components/CardItem';
+import CardProduct from '../../components/CardProduct';
 import Footer from '../../components/Footer';
 import CartIcon from '../../components/CartIcon';
 import GlobalStyle from '../../styles/GlobalStyle';
@@ -17,7 +17,7 @@ function Store() {
       <CartIcon />
       <main className="card-comic">
         { data.map((product) => (
-          <CardItem
+          <CardProduct
             key={product.id}
             product={product}
           />
