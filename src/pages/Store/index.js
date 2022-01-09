@@ -3,7 +3,7 @@ import CardItem from '../../components/CardItem';
 import Footer from '../../components/Footer';
 import CartIcon from '../../components/CartIcon';
 import GlobalStyle from '../../styles/GlobalStyle';
-import Navigation from '../../components/Navigation';
+import TopBar from '../../components/TopBar';
 import Context from '../../context/Context';
 import { Container } from './styles';
 
@@ -13,7 +13,7 @@ function Store() {
   return (
     <Container>
       <GlobalStyle />
-      <Navigation />
+      <TopBar />
       <CartIcon />
       <main className="card-comic">
         { data.map((product) => (

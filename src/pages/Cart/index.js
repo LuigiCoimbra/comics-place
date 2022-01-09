@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import GlobalStyle from '../../styles/GlobalStyle';
-import Navigation from '../../components/Navigation';
+import TopBar from '../../components/TopBar';
 import { getItemsFromLocalStorage, saveItemToLocalStorage } from '../../utils/localStorageHelpers';
 import HomeIcon from '../../components/HomeIcon';
 import { Container } from './styles';
@@ -57,7 +57,7 @@ function Cart() {
   return (
     <Container>
       <GlobalStyle />
-      <Navigation />
+      <TopBar />
       <HomeIcon />
       <div className="cart-items">
         { cartItems.length !== 0 ? (

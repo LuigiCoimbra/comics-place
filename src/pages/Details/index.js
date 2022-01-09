@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Navigation from '../../components/Navigation';
+import TopBar from '../../components/TopBar';
 import { requestComicId } from '../../services';
 import GlobalStyle from '../../styles/GlobalStyle';
 import HomeIcon from '../../components/HomeIcon';
@@ -23,7 +23,7 @@ function Details() {
   return (
     <div>
       <GlobalStyle />
-      <Navigation />
+      <TopBar />
       <HomeIcon />
       <CartIcon />
       { comicId.map((comic) => (
