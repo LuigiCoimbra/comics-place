@@ -12,7 +12,6 @@ Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da M
  - Tecnologia e Ferramentas:
    - ReactJS
    - React Router Dom
-   - React Hooks
    - Styled-components
    
 
