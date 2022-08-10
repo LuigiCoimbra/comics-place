@@ -1,5 +1,5 @@
 {
-  "name": "cinnecta-test",
+  "name": "comics-place",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,5 +46,17 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0"
-  }
+  },
+  "description": "Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuigiCoimbra/comics-place.git"
+  },
+  "author": "Luigi Coimbra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuigiCoimbra/comics-place/issues"
+  },
+  "homepage": "https://github.com/LuigiCoimbra/comics-place#readme"
 }
